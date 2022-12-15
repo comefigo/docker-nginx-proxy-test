@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  nginx1:
+    image: nginx
+    container_name: nginx1
+    hostname: nginx1
+    environment:
+      - TZ="Asia/Tokyo"
+    volumes:
+      - ./nginx1/config:/etc/nginx/conf.d
+    ports:
+      - 80:80
+  nginx2:
+    image: nginx
+    container_name: nginx2
+    hostname: nginx2
+    environment:
+      - TZ="Asia/Tokyo"
+    volumes:
+      - ./nginx2/www:/usr/share/nginx/html
